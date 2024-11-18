@@ -1,0 +1,16 @@
+{
+    "seed": 123,
+    "best_model":0.9923,
+    "optimizer": {
+        "type": "adam"
+    },
+    "training": {
+        "batch_size": 124,
+        "epochs": 20,
+        "start_lr": [1e-7],
+        "end_lr": [10],
+        "loss_type": "cross_entropy",
+        "use_scheduler": 1 ,
+        "scheduler_type": "steplr"
+    }
+}
