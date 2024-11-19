@@ -10,6 +10,10 @@ import json
 from torch import nn
 import plotext as plt
 
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 def get_model(device):
     model = Net().to(device)
     return model

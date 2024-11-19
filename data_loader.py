@@ -2,6 +2,8 @@ import torch
 from torch.utils.data import Dataset,ConcatDataset
 from torchvision import datasets,transforms
 import gc
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 class MNISTDataLoader:
     def __init__(self, batch_size=128, seed=1):
