@@ -1,12 +1,12 @@
 {
     "seed": 123,
-    "best_model":0.9923,
+    "best_model":0.991,
     "optimizer": {
         "type": "adam"
     },
     "training": {
         "batch_size": 124,
-        "epochs": 20,
+        "epochs": 10,
         "start_lr": [1e-7],
         "end_lr": [10],
         "loss_type": "cross_entropy",

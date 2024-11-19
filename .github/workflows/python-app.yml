@@ -41,4 +41,8 @@ jobs:
     
     - name: Test with pytest
       run: |
-        pytest 
+        pytest tests/test_model.py
+    
+    - name: Run Application
+      run: |
+        python run.py
