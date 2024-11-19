@@ -1,5 +1,5 @@
 torch>=2.4.1
 torchvision>=0.19.1
-torch-lr-finder>=0.2.2
-albumentations>=1.4.21
-plotext>=5.3.2
+torch-lr-finder
+albumentations
+plotext
