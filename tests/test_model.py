@@ -16,6 +16,10 @@ from unittest.mock import MagicMock
 from model_fit import training
 
 
+def test_model_param_count():
+    model = Net()
+    total_params = sum(p.numel() for p in model.parameters())  # Count total parameters
+    assert total_params < 25000, f"Model has {total_params} parameters, which exceeds the limit of 25,000."
 
 def test_model_output_shape():
     model = Net()
