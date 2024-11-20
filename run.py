@@ -1,7 +1,7 @@
 import torch
 from model import Net
 from optimizer import get_optimizer,run_lrfinder
-from model_fit import trainning,testing
+from model_fit import training,testing
 import albumentations as A
 from albumentations.augmentations.geometric.resize import Resize
 from albumentations.pytorch.transforms import ToTensorV2
@@ -27,7 +27,7 @@ def run_model(model,device,batch_size,epochs,optimizer,scheduler,best_model):
     test_losses =[]
     test_accuracy = []
     for EPOCHS in range(0,epochs):
-        train_loss, train_acc = trainning(model,device,train_loader,optimizer,EPOCHS)
+        train_loss, train_acc = training(model,device,train_loader,optimizer,EPOCHS)
         train_losses.append(train_loss)
         train_accuracy.append(train_acc)
 

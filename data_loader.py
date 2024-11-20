@@ -6,6 +6,9 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+
+
+
 class MNISTDataLoader:
     def __init__(self, batch_size=128, seed=1):
         self.cuda = torch.cuda.is_available()
@@ -20,12 +23,15 @@ class MNISTDataLoader:
             transforms.ToTensor(), 
             transforms.Normalize((self.mean,), (self.std,)),
             transforms.Resize((28, 28)),
-            transforms.RandomRotation(10),
+            transforms.RandomRotation(degrees=(-18,+18), fill=0,),  # Random rotation with 18 degrees, fill with 0
+            transforms.RandomAffine(0, scale=(0.8, 1.2), fill=0),   # Simulates zoom_range with 0.2 (80% to 120%)
         ])
         
         self.test_transforms = transforms.Compose([
             transforms.ToTensor(),
-            transforms.Normalize((self.mean,), (self.std,))
+            transforms.Normalize((self.mean,), (self.std,)),
+            transforms.RandomRotation(degrees=18, fill=0),
+            transforms.RandomAffine(0, scale=(0.8, 1.2), fill=0)
         ])
         
         self.dataloader_args = dict(

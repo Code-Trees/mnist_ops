@@ -4,19 +4,23 @@ warnings.filterwarnings('ignore')
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
+from model import Net
 
 from tqdm import tqdm
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-def trainning(model,device,train_data,optimizer,epochs,scheduler = None):
+model = Net()
+
+
+def training(model,device,train_data,optimizer,epochs,scheduler = None):
     total_loss = 0
     correct = 0
     processed = 0
 
     model.train()
-    pbar = tqdm(train_data,colour = '\x1b[34m')
+    pbar = tqdm(train_data,colour = 'YELLOW')
     
     for index_id,(data,target) in enumerate(pbar):
         data,target = data.to(device),target.to(device)
@@ -39,9 +43,8 @@ def trainning(model,device,train_data,optimizer,epochs,scheduler = None):
 
     return total_loss, acc
 
-def testing(model,device,test_data,optimizer,epochs):
+def testing(model,device,test_data,epochs):
     model.eval()
-    
     test_loss = 0
     correct = 0
     processed = 0
