@@ -31,7 +31,7 @@ def run_model(model,device,batch_size,epochs,optimizer,scheduler,best_model):
         train_losses.append(train_loss)
         train_accuracy.append(train_acc)
 
-        test_loss,test_acc = testing(model,device,test_loader,optimizer,EPOCHS)
+        test_loss,test_acc = testing(model,device,test_loader,EPOCHS)
         test_accuracy.append(test_acc)
         test_losses.append(test_loss)
         
