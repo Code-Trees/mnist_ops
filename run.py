@@ -119,25 +119,29 @@ if __name__ == "__main__":
 
     model,train_losses, train_accuracy,test_losses,test_accuracy= run_model(model,device,batch_size,epochs,optimizer,scheduler,best_model)
 
-    # Set a canvas size suitable for your terminal
-    plt.plotsize(5,5)
 
-    # Plot for accuracy
-    plt.clf()  # Clear the canvas before starting a new plot
-    plt.plot(train_accuracy, label="Train Accuracy")
-    plt.plot(test_accuracy, label="Test Accuracy")
-    plt.title("Model Accuracy")
-    plt.xlabel("Epochs")
-    plt.ylabel("Accuracy")
-    plt.show()
+    print("Max Train Accuracy: ",max(train_accuracy))
+    print("Max Test Accuracy: ",max(test_accuracy))
+
+    # # Set a canvas size suitable for your terminal
+    # plt.plotsize(5,5)
+
+    # # Plot for accuracy
+    # plt.clf()  # Clear the canvas before starting a new plot
+    # plt.plot(train_accuracy, label="Train Accuracy")
+    # plt.plot(test_accuracy, label="Test Accuracy")
+    # plt.title("Model Accuracy")
+    # plt.xlabel("Epochs")
+    # plt.ylabel("Accuracy")
+    # plt.show()
     
-    plt.plotsize(5,5)
-    # Plot for loss
-    plt.clf()  # Clear the canvas again for the next plot
-    plt.plot(train_losses, label="Train Loss")
-    plt.plot(test_losses, label="Test Loss")
-    plt.title("Model Loss")
-    plt.xlabel("Epochs")
-    plt.ylabel("Loss")
-    plt.show()
+    # plt.plotsize(5,5)
+    # # Plot for loss
+    # plt.clf()  # Clear the canvas again for the next plot
+    # plt.plot(train_losses, label="Train Loss")
+    # plt.plot(test_losses, label="Test Loss")
+    # plt.title("Model Loss")
+    # plt.xlabel("Epochs")
+    # plt.ylabel("Loss")
+    # plt.show()
 
