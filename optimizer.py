@@ -37,13 +37,13 @@ def run_lrfinder(model_obj,device,train_loader,test_loader,start_lr,end_lr,loss_
     for i in range(0,len(start_lr)):
         opti = SGD( params = model_obj.parameters(),lr = start_lr[i],momentum = 0.9,nesterov=True, weight_decay=0) 
         criterion = nn.CrossEntropyLoss()
-        lr_finder = LRFinder(model_obj,opti,criterion,device = device)
+        lr_finder = LRFinder(model_obj,opti,criterion,device = device,)
         lr_finder.range_test(train_loader ,start_lr=start_lr[i] ,end_lr=end_lr[i], num_iter=num_iter, step_mode='exp')
         
         try:
             grapg,lr_rate = lr_finder.plot()
         except:
-            pass
+            lr_rate = 0.001 # default
         print(f"Loss: {lr_finder.best_loss} LR :{lr_rate}")
         lr_finder.reset()
         lrs.append(lr_rate)
