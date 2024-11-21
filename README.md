@@ -232,6 +232,12 @@ tests/test_model.py::test_training_with_scheduler PASSED                 [100%]
 
 ## Push to git hub with Git action configured
 
+![GithubCommit](readme_images/Gitlog1.png)
+
+
+
+
+
 
 
 ![GithubAction](readme_images/Git_log.png)
