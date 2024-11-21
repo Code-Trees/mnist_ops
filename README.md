@@ -1,7 +1,10 @@
 # Model Documentation
 
+![Build Status](https://github.com/Code-Trees/mnist_ops/actions/workflows/python-app.yml/badge.svg)
+
 ## Model Architecture
-This deep learning model is a Convolutional Neural Network (CNN) designed for image classification tasks. The architecture is inspired by many people with additional modifications for improved performance.
+
+This deep learning model is a Convolution Neural Network (CNN) designed for image classification tasks. The architecture is inspired by many people with additional modifications for improved performance.
 
 ### Key Features:
 - Residual connections for better gradient flow
@@ -124,7 +127,9 @@ Test ==> Epochs: 1 Batch:  80 loss: 0.0005644781629554927 Accuracy: 97.88% : 100
 Conditions not met for saving the model.
 LR: 0.027380251779278577
 
-Train ==> Epochs: 2 Batch:  483 loss: 0.07642707973718643 Accuracy: 97.16% : 100%|██████████████████████████████████████████████████████████████| 484/484 [00:07<00:00, 61.36it/s]
+Train ==> Epochs: 2 Batch:  483 loss: 0.07642707973718643 Accuracy: 97.16% : 100%|██████████████████████████████████████████████████# My Awesome Project
+![Build Status](https://github.com/<username>/<repository>/actions/workflows/<workflow-file-name>.yml/badge.svg)
+████████████| 484/484 [00:07<00:00, 61.36it/s]
 Test ==> Epochs: 2 Batch:  80 loss: 0.0005128854883834719 Accuracy: 97.91% : 100%|████████████████████████████████████████████████████████████████| 81/81 [00:01<00:00, 57.49it/s]
 Conditions not met for saving the model.
 LR: 0.027380251779278577
@@ -242,14 +247,52 @@ tests/test_model.py::test_training_with_scheduler PASSED                 [100%]
 
 ![GithubAction](readme_images/Git_log.png)
 
+**Git Action logs**
+
+**LR finder**
+
+ 94%|█████████▍| 945/1000 [01:04<00:03, 14.64it/s]
+
+Stopping early, the loss has diverged
+
+Learning rate search finished. See the graph with {finder_name}.plot()
+
+LR suggestion: steepest gradient
+
+Suggested LR: 3.12E-02
+
+Loss: 0.31175027199026456 LR :0.031152542235554845
+
+
+
+**Training/Testing Loop:**
+
+Train ==> Epochs: 0 Batch:  937 loss: 0.03763921186327934 Accuracy: 90.91% : 100%|██████████| 938/938 [01:05<00:00, 15.51it/s]
+
+Train ==> Epochs: 0 Batch:  937 loss: 0.03763921186327934 Accuracy: 90.91% : 100%|██████████| 938/938 [01:05<00:00, 14.35it/s]
+
+
+
+Test ==> Epochs: 0 Batch:  156 loss: 0.0016227789369411766 Accuracy: 96.75% : 100%|██████████| 157/157 [00:08<00:00, 19.35it/s]
+
+Insufficient test accuracy data.
+
+LR: 0.031152542235554845
+
+Max Train Accuracy:  0.9090833333333334
+
+Max Test Accuracy:  0.9675
+
+
+
 
 
 ## Requirements
 
-- Python 3.8+
-- PyTorch 1.10+
+- torch>=2.4.1 --index-url https://download.pytorch.org/whl/cpu
+- torchvision>=0.19.1 --index-url https://download.pytorch.org/whl/cpu
 - Albumentations 1.1.0
 - NumPy 1.21+
 - OpenCV 4.5+
-- CUDA 11.3+ (for GPU support)
+- CUDA 11.3+ (for GPU support ONLY)
 
